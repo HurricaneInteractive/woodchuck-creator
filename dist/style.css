@@ -111,7 +111,6 @@ input {
     border: none;
     padding: 20px 18px;
     width: 100%;
-    max-width: 320px;
     transition: box-shadow 250ms ease-in-out;
 }
 
@@ -121,10 +120,34 @@ input:focus {
 }
 
 .input-group {
-    margin-bottom: 20px;
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto 20px;
 }
 .input-group:last-of-type {
-    margin: 0;
+    margin-bottom: 0;
+}
+
+.input-group:after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
+    background: var(--button);
+}
+
+.input-group:nth-child(1):after {
+    background: var(--blue);
+}
+.input-group:nth-child(2):after {
+    background: var(--pink);
+}
+.input-group:nth-child(3):after {
+    background: var(--yellow);
 }
 
 .container {
