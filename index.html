@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Woodchuck Creator</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- <link rel="stylesheet" href="dist/style.css"> -->
+        <style>body,h1 strong:after{height:100%;width:100%}button,h1 strong{display:inline-block}body,h1 strong,input{color:var(--black)}.container,body,input{width:100%}.container,button{text-align:center}:root{--blue:#3bfbff;--black:#0B0B0B;--yellow:#fff100;--pink:#FF00CC;--light-bg:#fafaf9;--button:#0060f8;--font-family:serif}body{font-size:16px;font-family:var(--font-family);background-color:var(--light-bg);margin:0;position:fixed;display:flex;justify-content:center;align-items:center}button,input{box-shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif}*{box-sizing:border-box}::selection{background:var(--button);color:#fff}h1{font-size:2em;margin:0 0 75px;line-height:1.4;text-transform:capitalize}h1 strong{padding:0 3px;position:relative;z-index:1;line-height:1.2}h1 strong:after{content:'';position:absolute;top:0;left:0;z-index:-1;transform-origin:center left;transform:scaleX(0);animation:sizeUp .5s ease-in-out .5s forwards}@keyframes sizeUp{to{transform:scaleX(1)}}strong[data-type=action]:after{background:var(--yellow)}strong[data-type=object]:after{background:var(--blue)}strong[data-type=occupation]:after{background:var(--pink)}button{padding:15px 25px;border-radius:5px;color:#fff;background:var(--button);margin-top:30px;border:none;font-size:.88em;min-width:200px;cursor:pointer;text-transform:uppercase;letter-spacing:2px;font-weight:600}label{display:none}input{border-radius:5px;font-size:1em;border:none;padding:20px 18px;max-width:320px;transition:box-shadow 250ms ease-in-out}input:focus{outline:0;box-shadow:0 0 10px rgba(0,96,248,.6)}.input-group{margin-bottom:20px}.input-group:last-of-type{margin:0}.container{max-width:768px;margin:30px auto;padding:50px;background-color:#fff;border-radius:10px;box-shadow:0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)}@media (max-width:767px){body{position:relative;display:block}h1{font-size:1.5em;margin-bottom:40px}.container{padding:30px;margin:15px;width:auto}}</style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1>"How much <strong data-type="object">wood</strong> would a <strong data-type="occupation">woodchuck</strong> <strong data-type="action">chuck</strong> if a <strong data-type="occupation">woodchuck</strong> could <strong data-type="action">chuck</strong> <strong data-type="object">wood</strong>?"</h1>
+
+            <form id="gen" action="/">
+                <div class="input-group">
+                    <label for="object">Object:</label>
+                    <input required name="object" id="object" value="" placeholder="Wood" />
+                </div>
+                <div class="input-group">
+                    <label for="occupation">Occupation:</label>
+                    <input required name="occupation" id="occupation" value="" placeholder="Woodchuck" />
+                </div>
+                <div class="input-group">
+                    <label for="action">Action:</label>
+                    <input required name="action" id="action" value="" placeholder="Chuck" />
+                </div>
+
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+        
+        <!-- <script async src="dist/main.js"></script> -->
+        <script type="text/javascript">"use strict";window.onload=function(){var e=document.getElementById("gen"),t=document.querySelectorAll("h1 strong");e.onsubmit=function(n){n.preventDefault();var o=e.querySelectorAll("input"),u={};o.forEach(function(e){u[e.getAttribute("id")]=e.value.toLowerCase(),e.value=""}),t.forEach(function(e){e.innerText=u[e.dataset.type]})}};</script>
+    </body>
+</html>
